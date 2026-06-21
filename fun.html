@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ask Munaf — Jokes &amp; AI</title>
+<meta name="robots" content="noindex, nofollow" />
+<meta name="theme-color" content="#9E2B25" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>❤️</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body data-page="fun">
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow reveal">Powered by AI · in his voice</span>
+    <h1 class="reveal d1">Ask <em>Munaf</em>.</h1>
+    <p class="lead reveal d2">The jokes, the wisdom, the chat — all generated live in his voice. Pull his finger (figuratively), or just talk to him.</p>
+  </div>
+</section>
+
+<!-- ===== JOKES ===== -->
+<section class="page-section tint-paper2">
+  <div class="wrap">
+    <div class="joke-zone reveal">
+      <span class="joke-tag" id="joke-tag">In his own words</span>
+      <div class="joke-stage"><div class="joke-text" id="joke-text"></div></div>
+      <div class="joke-controls">
+        <button class="btn" id="joke-dad">😄 Tell me a fresh Munaf joke</button>
+        <button class="btn ghost" id="joke-real">In his own words</button>
+      </div>
+      <div style="margin-top:22px">
+        <p class="muted" style="margin-bottom:8px">Are you a friend of Zain or Reza? Watch him work. 👇</p>
+        <div class="joke-controls" style="margin-top:0">
+          <input class="field" id="friend-name" placeholder="Your name (optional)" style="max-width:220px;width:auto" />
+          <button class="btn gold" id="joke-friend">🤝 “Oh, they talk about you all the time!”</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ASK MUNAF CHAT ===== -->
+<section class="ask" id="ask">
+  <div class="wrap narrow center">
+    <h2>Ask him anything.</h2>
+    <p class="lead">Advice, a story, or just tell him you’re tired. He answers the way he would.</p>
+  </div>
+  <div class="wrap">
+    <div class="ask__panel reveal">
+      <div class="ask__head">
+        <img class="ask__avatar" src="assets/img/santiago-rock-thumb.jpg" alt="Munaf" />
+        <div class="ask__who">
+          <b>Munaf Shamji</b>
+          <span><span class="live"></span> here for you, as always</span>
+        </div>
+      </div>
+      <div class="ask__log" id="ask-log" aria-live="polite"></div>
+      <div class="ask__suggest" id="ask-suggest">
+        <button class="chip">What should I do when I feel like giving up?</button>
+        <button class="chip">Tell me about Tanzania.</button>
+        <button class="chip">What’s the secret to a happy family?</button>
+        <button class="chip">I’m tired, Dad.</button>
+      </div>
+      <form class="ask__form" id="ask-form" autocomplete="off">
+        <input id="ask-input" type="text" placeholder="Ask him anything…" aria-label="Ask Munaf anything" maxlength="300" />
+        <button type="submit" aria-label="Send"><svg viewBox="0 0 24 24"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg></button>
+      </form>
+    </div>
+    <p class="ask__note">A loving AI impression for his sons — not the real Munaf, and not medical advice. He’d want us to say that.</p>
+  </div>
+</section>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/site.js"></script>
+<script src="assets/js/ai.js"></script>
+<script src="assets/js/jokes.js"></script>
+<script src="assets/js/ask-munaf.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

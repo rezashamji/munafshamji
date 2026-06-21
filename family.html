@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Family He Holds Together — Munaf Shamji</title>
+<meta name="robots" content="noindex, nofollow" />
+<meta name="theme-color" content="#9E2B25" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>❤️</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body data-page="family">
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow reveal">The heart of the family</span>
+    <h1 class="reveal d1">The family he <em>holds together</em>.</h1>
+    <p class="lead reveal d2">Cousins, aunts, uncles, friends — the only reason this enormous family stays a family is that one man keeps building the table. Here is the family he loves, all of it. Tap a name to open it up — and add anyone we missed.</p>
+  </div>
+</section>
+
+<section class="page-section tint-paper2">
+  <div class="wrap">
+    <div class="ftree-tabs reveal" id="ftree-tabs"></div>
+    <div class="ftree reveal" id="ftree"></div>
+    <div class="ftree-actions">
+      <button class="btn ghost" id="ftree-reset">↺ Reset added relatives</button>
+    </div>
+    <p class="ftree-note">This tree is a starting point — tap “+ add a relative” on anyone to grow it. (Additions save to this device. Reza/Zain: confirm spellings &amp; relationships anytime.)</p>
+  </div>
+</section>
+
+<section class="page-section">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow" style="justify-content:center">All together</span>
+      <h2>The gatherings he builds.</h2>
+      <p class="lead" style="margin-inline:auto">He opens his home to everyone, pays for everyone’s dinner like it was never a question, and plans a 200–300 person reunion in Newport Beach. Tap any moment.</p>
+    </div>
+    <div class="gallery" id="family-grid"></div>
+  </div>
+</section>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/site.js"></script>
+<script src="assets/js/familytree.js"></script>
+<script>
+/* family photo/video strip -> uses main.js lightbox */
+(function(){
+  var items = [
+    {s:"family-floral-event", t:"img", c:"The whole gang — he's the gravity that holds it together."},
+    {s:"family-porch",        t:"img", c:"Three generations on one porch, his doing."},
+    {s:"grandmothers-family", t:"img", c:"Under one roof."},
+    {s:"family-restaurant",   t:"img", c:"Dinner with the people he loves."},
+    {s:"imaan-21-party",      t:"video", c:"On the dance floor at Imaan's 21st — lei and all."},
+    {s:"party-dancing",       t:"video", c:"He brought the whole party together."},
+    {s:"with-mom-couch",      t:"img", c:"Deep in conversation with his mother."},
+    {s:"hotel-family-selfie", t:"img", c:"Family selfie on the road."}
+  ];
+  var g = document.getElementById("family-grid");
+  if (g) g.innerHTML = items.map(function(it){
+    var thumb = it.t==="video" ? "assets/video/"+it.s+"-poster.jpg" : "assets/img/"+it.s+"-thumb.jpg";
+    var full  = it.t==="video" ? "assets/video/"+it.s+".mp4" : "assets/img/"+it.s+".jpg";
+    var cap = it.c.replace(/"/g,"&quot;");
+    return '<figure class="js-media" data-type="'+it.t+'" data-src="'+full+'" data-cap="'+cap+'">'+
+      '<img src="'+thumb+'" alt="'+cap+'" loading="lazy">'+
+      (it.t==="video"?'<span class="vbadge"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>':'')+
+      '</figure>';
+  }).join("");
+})();
+</script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

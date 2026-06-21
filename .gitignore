@@ -1,0 +1,20 @@
+# Never publish the raw source media (huge + private originals)
+fathers_day_2026_photos_and_vids/
+
+# Local-only working files
+_view/
+scripts/build_media.log
+*.output
+
+# Node / Cloudflare
+node_modules/
+.wrangler/
+.dev.vars
+.DS_Store
+
+# Optimized media — see note below.
+# These ARE committed (the site needs them on GitHub Pages).
+# If you'd rather host media elsewhere, ignore assets/img and assets/video.
+
+# QA temp copies
+_qa*.html

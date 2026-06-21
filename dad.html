@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dad’s Desk — Munaf Shamji</title>
+<meta name="robots" content="noindex, nofollow" />
+<meta name="theme-color" content="#9E2B25" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>❤️</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body data-page="dad">
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow reveal">For Dad to use</span>
+    <h1 class="reveal d1">Dad’s <em>Desk</em>.</h1>
+    <p class="lead reveal d2">You love writing your to-dos on paper for us, Dad. Here’s the digital version — write it once and it goes straight to Zain, Reza &amp; Mom. Plus a spot for your articles and your songs.</p>
+  </div>
+</section>
+
+<section class="page-section tint-paper2">
+  <div class="wrap">
+    <div class="desk-grid">
+
+      <!-- TO-DO -->
+      <div class="desk-card reveal">
+        <h3>📝 Today’s to-do list</h3>
+        <p class="hint">Write one task per line. We’ll get it instantly.</p>
+        <textarea class="field" id="todo-text" placeholder="Call the cardiologist back&#10;Book Newport for the reunion&#10;Pick up Cadbury Whole Nut 🍫"></textarea>
+        <div class="recip" data-recip></div>
+        <div class="desk-row">
+          <button class="btn" id="todo-sms">💬 Send by Message</button>
+          <button class="btn ghost" id="todo-email">✉️ Send by Email</button>
+        </div>
+      </div>
+
+      <!-- ARTICLE -->
+      <div class="desk-card reveal" id="article-card">
+        <h3>📰 Share an article</h3>
+        <p class="hint">Paste a link, or snap a photo of the newspaper — it’ll read the headline for you.</p>
+        <input class="field" id="article-link" placeholder="Paste an article link (optional)" />
+        <div class="dropzone" id="article-drop" style="margin-top:12px">📷 Tap to add a photo of the article</div>
+        <input type="file" id="article-file" accept="image/*" capture="environment" hidden />
+        <div class="ocr-status" id="article-status"></div>
+        <div class="recip" data-recip></div>
+        <div class="desk-row">
+          <button class="btn" id="article-sms">💬 Send by Message</button>
+          <button class="btn ghost" id="article-email">✉️ Send by Email</button>
+        </div>
+      </div>
+
+      <!-- SONGS -->
+      <div class="desk-card wide reveal">
+        <h3>🎵 The songs he loves</h3>
+        <p class="hint">Tap the little ♪ button (bottom-left) to play our song — <em>Unstoppable</em>. Or open any of these.</p>
+        <div class="song-grid" id="song-grid"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/site.js"></script>
+<script src="assets/js/dadtools.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

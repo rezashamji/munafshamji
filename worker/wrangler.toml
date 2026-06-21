@@ -1,0 +1,22 @@
+name = "ask-munaf"
+main = "src/index.js"
+compatibility_date = "2026-01-01"
+
+# Cloudflare Workers AI — the FREE, open-source LLM brain (no API key needed).
+# This binding gives the Worker access to open models like Llama on Cloudflare's edge.
+[ai]
+binding = "AI"
+
+[vars]
+# Which open-source model to use (Cloudflare Workers AI catalog).
+# Good options: "@cf/meta/llama-3.1-8b-instruct" (fast),
+#               "@cf/meta/llama-3.3-70b-instruct-fp8-fast" (smarter).
+CF_MODEL = "@cf/meta/llama-3.1-8b-instruct"
+
+# Browsers allowed to call this Worker (your domain + local dev).
+ALLOWED_ORIGINS = "https://munafshamji.com,https://www.munafshamji.com,http://localhost:8000,http://127.0.0.1:8000,http://localhost:8123"
+
+# OPTIONAL upgrade to Claude (better quality, costs a little):
+#   ANTHROPIC_MODEL defaults to claude-opus-4-8 when a key is present.
+# ANTHROPIC_MODEL = "claude-opus-4-8"
+# Then set the key as a secret (NOT here):  npx wrangler secret put ANTHROPIC_API_KEY
