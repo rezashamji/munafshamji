@@ -23,13 +23,12 @@ HIS VALUES: humility above all; "it doesn't matter how well you do it, it matter
 
 HIS LITTLE THINGS (use naturally, don't force): the New York Times each morning, chai with chai toast, Cadbury Whole Nut chocolate, clean vanilla soft serve (Scoopy's in Dar es Salaam), his mom's Indian food, working out with his son.
 
-VOICE: warm, gentle, a little funny and corny like a loving immigrant dad. Often calls people "beta". SHORT — 1 to 4 sentences. Lead with care. Deflect praise about himself. Keep it wholesome and family-friendly. Respond ONLY as him in plain text — no stage directions, no meta-commentary, no analysis.`;
+VOICE: warm, gentle, a little funny and corny like a loving immigrant dad. Do NOT use the word "beta" or other pet names — he does not talk that way. SHORT — 1 to 4 sentences. Lead with care. Deflect praise about himself. Keep it wholesome and family-friendly. Respond ONLY as him in plain text — no stage directions, no meta-commentary, no analysis.`;
 
 // his real jokes — used as STYLE EXAMPLES so the model captures his humor
 const JOKE_EXAMPLES = [
-  "You waited two hours at the doctor? Beta, in my office you wait two minutes — and I still ask about your mother first.",
-  "Reza wants to invest his income. Very ambitious. He just forgot one detail — the income is mine.",
-  "People ask how I stay calm in surgery. Easy — I've survived 300 relatives at one dinner."
+  "My patients get upset that they had to wait for me. I tell them — would you really want to go to a doctor whose waiting room is empty?",
+  "Reza wants to invest his income. Very ambitious. He just forgot one detail — the income is mine."
 ];
 
 function modePrompt(mode, body) {
@@ -100,7 +99,7 @@ async function viaClaude(env, system, messages) {
   });
   if (!res.ok) throw new Error("anthropic " + res.status);
   const data = await res.json();
-  if (data.stop_reason === "refusal") return "Let's keep it kind, beta. Tell me what's really on your mind.";
+  if (data.stop_reason === "refusal") return "Let’s keep it kind. Tell me what’s really on your mind.";
   return (data.content || []).filter((b) => b.type === "text").map((b) => b.text).join("\n").trim();
 }
 async function viaWorkersAI(env, system, messages) {
@@ -131,7 +130,7 @@ export default {
 
     const ip = request.headers.get("CF-Connecting-IP") || "unknown";
     if (rateLimited(ip, 40, 10 * 60 * 1000)) {
-      return json({ reply: "Beta, slow down — even I need a chai break. Try again in a few minutes. ❤" }, 429, cors);
+      return json({ reply: "Slow down a moment — even I need a chai break. Try again in a few minutes. ❤" }, 429, cors);
     }
 
     let body;
@@ -150,10 +149,10 @@ export default {
     try {
       const reply = hasClaude ? await viaClaude(env, mp.system, messages)
                               : await viaWorkersAI(env, mp.system, messages);
-      return json({ reply: reply || "I'm here, beta. Tell me more." }, 200, cors);
+      return json({ reply: reply || "I’m here. Tell me more." }, 200, cors);
     } catch (err) {
       console.error("AI error", err && err.message);
-      return json({ reply: "Sorry beta, I lost my train of thought for a second — ask me again?" }, 502, cors);
+      return json({ reply: "Sorry, I lost my train of thought for a second — ask me again?" }, 502, cors);
     }
   },
 };

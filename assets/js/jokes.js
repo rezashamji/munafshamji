@@ -9,9 +9,9 @@
 
   // His actual material (lightly tidied from how he tells it). NOT AI-generated.
   var HIS_REAL = [
-    "You waited two hours at the doctor? Beta, in my office you wait two minutes — and I still ask about your mother first.",
+    "My patients get upset that they had to wait for me. I tell them — would you really want to go to a doctor whose waiting room is empty?",
     "Reza wants to invest his money from his income. Very smart. He just forgot one detail — the income is mine.",
-    "Oh, you're Reza's friend? He always talks about you! Honestly… I probably know no more about you than Reza does. Come, eat something."
+    "Oh, you're Reza's friend? He always talks about you! Honestly… I probably know no more about you than Reza does."
   ];
   function pickerFor(arr) {
     var bag = [];

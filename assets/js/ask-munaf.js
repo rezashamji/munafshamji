@@ -16,10 +16,10 @@
   function add(role, text) { var m = el("msg " + (role === "user" ? "user" : "bot"), text); log.appendChild(m); log.scrollTop = log.scrollHeight; return m; }
   function typing() { var m = el("msg bot typing"); m.innerHTML = '<span class="dots"><span></span><span></span><span></span></span>'; log.appendChild(m); log.scrollTop = log.scrollHeight; return m; }
 
-  add("bot", "Beta, you're here — sit, sit. Tell me what's on your mind. (And first: did you eat something?)");
+  add("bot", "You’re here — sit, sit. Tell me what's on your mind. (And first: did you eat something?)");
 
   var OFFLINE =
-    "Beta, my full brain isn't plugged in yet — tell Reza or Zain to flip the switch (it's free, takes a minute). " +
+    "My full brain isn’t plugged in yet — tell Reza or Zain to flip the switch (it's free, takes a minute). " +
     "But you already know what I'd say: be honest with yourself, try your hardest, take care of the people around you — and call your mother. Now go, do something good with your day. ❤";
 
   function respond(text) {
