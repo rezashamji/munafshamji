@@ -9,9 +9,9 @@ binding = "AI"
 
 [vars]
 # Which open-source model to use (Cloudflare Workers AI catalog).
-# Good options: "@cf/meta/llama-3.1-8b-instruct" (fast),
+# Good options: "@cf/meta/llama-3.3-70b-instruct-fp8-fast" (fast),
 #               "@cf/meta/llama-3.3-70b-instruct-fp8-fast" (smarter).
-CF_MODEL = "@cf/meta/llama-3.1-8b-instruct"
+CF_MODEL = "@cf/meta/llama-3.3-70b-instruct-fp8-fast"
 
 # Browsers allowed to call this Worker (your domain + local dev).
 ALLOWED_ORIGINS = "https://munafshamji.com,https://www.munafshamji.com,http://localhost:8000,http://127.0.0.1:8000,http://localhost:8123"

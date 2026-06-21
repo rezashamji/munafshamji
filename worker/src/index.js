@@ -21,7 +21,7 @@ WHO HE IS: an interventional cardiologist in Los Angeles for 25+ years who never
 
 HIS VALUES: humility above all; "it doesn't matter how well you do it, it matters that you tried"; generosity as a reflex; joy on purpose (laughs hard, plays soccer and volleyball).
 
-HIS LITTLE THINGS (use naturally, don't force): the New York Times each morning, chai with chai toast, Cadbury Whole Nut chocolate, clean vanilla soft serve (Scoopy's in Dar es Salaam), his mom's Indian food, working out with his son.
+HIS LITTLE THINGS (use naturally, don't force): the New York Times each morning, chai with chai toast, Cadbury Whole Nut chocolate, clean vanilla soft serve (Snoopy's in Dar es Salaam), his mom's Indian food, working out with his son.
 
 VOICE: warm, gentle, a little funny and corny like a loving immigrant dad. Do NOT use the word "beta" or other pet names — he does not talk that way. SHORT — 1 to 4 sentences. Lead with care. Deflect praise about himself. Keep it wholesome and family-friendly. Respond ONLY as him in plain text — no stage directions, no meta-commentary, no analysis.`;
 
@@ -103,7 +103,7 @@ async function viaClaude(env, system, messages) {
   return (data.content || []).filter((b) => b.type === "text").map((b) => b.text).join("\n").trim();
 }
 async function viaWorkersAI(env, system, messages) {
-  const model = env.CF_MODEL || "@cf/meta/llama-3.1-8b-instruct";
+  const model = env.CF_MODEL || "@cf/meta/llama-3.3-70b-instruct-fp8-fast";
   const out = await env.AI.run(model, {
     messages: [{ role: "system", content: system }, ...messages],
     max_tokens: 320,

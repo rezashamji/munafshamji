@@ -8,7 +8,7 @@ window.SITE = window.SITE || {};
 /* ---- Live AI backend (Cloudflare Worker). Paste your deployed Worker URL here
    to switch on the live, open-source AI for jokes + Ask Munaf.
    e.g. "https://ask-munaf.YOURNAME.workers.dev". Empty = AI not connected yet. */
-window.SITE.workerUrl = "";
+window.SITE.workerUrl = "/api/ask";
 
 /* ---- The man + immediate family (corrected spellings) ---- */
 window.SITE.people = {

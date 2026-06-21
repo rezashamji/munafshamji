@@ -1,0 +1,14 @@
+# Cloudflare Pages config — hosts the site AND the live AI (same origin).
+# Deploy from the repo root:  npx wrangler pages deploy
+name = "munafshamji"
+pages_build_output_dir = "_site"
+compatibility_date = "2026-01-01"
+
+# Free, open-source LLM brain (no API key). Powers /api/ask via _site/_worker.js.
+[ai]
+binding = "AI"
+
+[vars]
+CF_MODEL = "@cf/meta/llama-3.3-70b-instruct-fp8-fast"
+# Optional Claude upgrade: set the secret with
+#   npx wrangler pages secret put ANTHROPIC_API_KEY

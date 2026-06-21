@@ -18,3 +18,6 @@ node_modules/
 
 # QA temp copies
 _qa*.html
+
+# Cloudflare Pages build bundle
+_site/

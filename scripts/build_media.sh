@@ -92,3 +92,13 @@ echo "media build done" >> "$LOG"
 echo "IMG count: $(ls assets/img | wc -l)" >> "$LOG"
 echo "VIDEO count: $(ls assets/video | wc -l)" >> "$LOG"
 du -sh assets/img assets/video >> "$LOG" 2>&1
+
+# --- added later: vintage kid photos (dad with Zain & Reza) ---
+for pair in "IMG_9954.JPG::vintage-nap" "IMG_9957.JPG::vintage-shower" "IMG_9959.JPG::vintage-boys-floor"; do
+  orig="${pair%%::*}"; slug="${pair##*::}"; src="$SRC/$orig"
+  [ -f "$src" ] || continue
+  sips -s format jpeg -Z 1800 -s formatOptions 82 "$src" --out "assets/img/$slug.jpg" >/dev/null 2>&1
+  sips -s format jpeg -Z 800  -s formatOptions 80 "$src" --out "assets/img/$slug-thumb.jpg" >/dev/null 2>&1
+  cwebp -quiet -q 82 "assets/img/$slug.jpg"       -o "assets/img/$slug.webp" 2>/dev/null
+  cwebp -quiet -q 78 "assets/img/$slug-thumb.jpg" -o "assets/img/$slug-thumb.webp" 2>/dev/null
+done

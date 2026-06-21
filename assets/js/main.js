@@ -85,6 +85,9 @@
 
   /* ---------- Gallery generation ---------- */
   var GALLERY = [
+    { s: "vintage-nap",        t: "img",   c: "A sleeping boy, and the man who never put him down." },
+    { s: "vintage-shower",     t: "img",   c: "Soaking wet and both grinning." },
+    { s: "vintage-boys-floor", t: "img",   c: "Both boys piled on Dad. Always." },
     { s: "seychelles-swing",  t: "img",   c: "A beach swing in the Seychelles." },
     { s: "morocco-atlas",     t: "img",   c: "Bundled up in the Atlas Mountains, Morocco." },
     { s: "bali-heart",        t: "img",   c: "Framed inside a heart — Bali, with both his boys." },
